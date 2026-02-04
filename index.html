@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip N' Soul | Premium Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff9f1c; /* Orange from your menu */
+            --dark: #121212;
+            --surface: #1e1e1e;
+            --text: #ffffff;
+            --text-dim: #b3b3b3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--dark); color: var(--text); scroll-behavior: smooth; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(18, 18, 18, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=2078') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 10px; }
+        .hero p { color: var(--primary); letter-spacing: 3px; font-weight: 600; }
+
+        /* Menu Section */
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2.5rem; font-family: 'Playfair Display', serif; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--primary); margin: 10px auto; }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-category {
+            background: var(--surface);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+        .menu-category:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .menu-category h3 { color: var(--primary); margin-bottom: 20px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .item-name { color: var(--text); }
+        .item-price { color: var(--primary); font-weight: bold; }
+
+        /* Contact/Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 50px 8% 20px;
+            margin-top: 100px;
+            border-top: 2px solid var(--primary);
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-content h4 { margin-bottom: 20px; color: var(--primary); }
+        .footer-content p, .footer-content a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
+        .footer-content a:hover { color: var(--primary); }
+
+        .bottom-bar { text-align: center; padding-top: 20px; border-top: 1px solid #222; font-size: 0.8rem; color: #555; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Sip N' Soul</div>
+        <div class="contact-btn">
+            <a href="tel:7811054772" style="color: var(--primary); text-decoration: none; font-weight: bold;">Call Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p>HUNGRY NAKI FOR FOOD LOVERS</p>
+        <h1>Sip N' Soul Cafe</h1>
+        <p>OPENS 7AM - 10PM</p>
+    </header>
+
+    <section class="container" id="menu">
+        <div class="section-title">
+            <h2>Our Special Menu</h2>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3>Beverages</h3>
+                <div class="menu-item"><span class="item-name">Tea</span> <span class="item-price">₹10</span></div>
+                <div class="menu-item"><span class="item-name">Hot Coffee</span> <span class="item-price">₹20</span></div>
+                <div class="menu-item"><span class="item-name">Cold Coffee</span> <span class="item-price">₹50</span></div>
+                <div class="menu-item"><span class="item-name">Milk Shake</span> <span class="item-price">₹40</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Momos</h3>
+                <div class="menu-item"><span class="item-name">Veg Momos (5 pcs)</span> <span class="item-price">₹40</span></div>
+                <div class="menu-item"><span class="item-name">Chicken Momos (5 pcs)</span> <span class="item-price">₹50</span></div>
+                <div class="menu-item"><span class="item-name">Chicken Momos (Full)</span> <span class="item-price">₹80</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Biryani</h3>
+                <div class="menu-item"><span class="item-name">Aloo Biryani (H/F)</span> <span class="item-price">50/70</span></div>
+                <div class="menu-item"><span class="item-name">Egg Biryani (H/F)</span> <span class="item-price">60/80</span></div>
+                <div class="menu-item"><span class="item-name">Chicken Biryani (H/F)</span> <span class="item-price">70/100</span></div>
+                <div class="menu-item"><span class="item-name">Mutton Biryani (H/F)</span> <span class="item-price">100/160</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Paratha & Naan</h3>
+                <div class="menu-item"><span class="item-name">Aloo Paratha</span> <span class="item-price">₹15</span></div>
+                <div class="menu-item"><span class="item-name">Lachha Paratha</span> <span class="item-price">₹20</span></div>
+                <div class="menu-item"><span class="item-name">Butter Naan</span> <span class="item-price">₹25</span></div>
+                <div class="menu-item"><span class="item-name">Ghee Naan</span> <span class="item-price">₹30</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Rolls</h3>
+                <div class="menu-item"><span class="item-name">Veg Roll (Paneer)</span> <span class="item-price">₹60</span></div>
+                <div class="menu-item"><span class="item-name">Egg Roll</span> <span class="item-price">₹35</span></div>
+                <div class="menu-item"><span class="item-name">Chicken Roll</span> <span class="item-price">₹55</span></div>
+                <div class="menu-item"><span class="item-name">Pasta (Full)</span> <span class="item-price">₹50</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Chicken Specials</h3>
+                <div class="menu-item"><span class="item-name">Chicken Pakora (250g)</span> <span class="item-price">₹80</span></div>
+                <div class="menu-item"><span class="item-name">Chicken Lolipop (3 pcs)</span> <span class="item-price">₹80</span></div>
+                <div class="menu-item"><span class="item-name">Chicken Kosha (Full)</span> <span class="item-price">₹110</span></div>
+                <div class="menu-item"><span class="item-name">Chilli Chicken (8 pcs)</span> <span class="item-price">₹200</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Contact Us</h4>
+                <p>📍 Visit us at our Cafe</p>
+                <a href="tel:7811054772">📞 +91 7811054772</a>
+                <a href="mailto:Sipnsoulofficial@gmail.com">✉️ Sipnsoulofficial@gmail.com</a>
+            </div>
+            <div>
+                <h4>Hours</h4>
+                <p>Monday - Sunday</p>
+                <p>07:00 AM - 10:00 PM</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/sip_n_soul__?igsh=MTFjNmIwc2hoM2Nmag==" target="_blank">Instagram</a>
+                <p>Facebook</p>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            &copy; 2026 Sip N' Soul Cafe. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
