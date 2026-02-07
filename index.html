@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip N' Soul | Premium Cafe & Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #ff9f1c; 
+            --dark: #121212;
+            --surface: #1e1e1e;
+            --white: #ffffff;
+            --gray: #b3b3b3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--dark); color: var(--white); scroll-behavior: smooth; }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: rgba(18, 18, 18, 0.98);
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333;
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); text-decoration: none; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 25px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 10px; }
+        .hero p { color: var(--gold); letter-spacing: 4px; font-weight: 600; text-transform: uppercase; }
+
+        /* Menu Section */
+        .container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 3rem; font-family: 'Playfair Display', serif; color: var(--gold); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 15px auto; }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .menu-category { background: var(--surface); padding: 30px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; }
+        .menu-category:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .menu-category h3 { color: var(--gold); margin-bottom: 25px; border-bottom: 1px solid #444; padding-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+
+        .menu-item { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dotted #444; padding-bottom: 5px; }
+        .item-price { color: var(--gold); font-weight: bold; }
+
+        /* Rating & Feedback Form */
+        .feedback-section { background: #1a1a1a; padding: 80px 20px; border-top: 1px solid #333; }
+        .feedback-card { background: var(--surface); padding: 40px; border-radius: 15px; max-width: 600px; margin: 0 auto; border: 1px solid #333; }
+        
+        .stars { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 2.5rem; margin-bottom: 25px; }
+        .stars input { display: none; }
+        .stars label { color: #444; cursor: pointer; transition: 0.2s; padding: 0 5px; }
+        .stars input:checked ~ label, .stars label:hover, .stars label:hover ~ label { color: var(--gold); }
+
+        .form-input { width: 100%; background: #2a2a2a; border: 1px solid #444; padding: 15px; color: white; border-radius: 8px; margin-bottom: 20px; font-family: inherit; }
+        .form-input:focus { outline: none; border-color: var(--gold); }
+        
+        .submit-btn { background: var(--gold); color: black; border: none; padding: 15px; border-radius: 30px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .submit-btn:hover { background: #e68a00; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 159, 28, 0.3); }
+
+        /* Footer */
+        footer { background: #0a0a0a; padding: 60px 8% 30px; border-top: 2px solid var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: var(--gold); margin-bottom: 25px; font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+        .footer-col p, .footer-col a { color: var(--gray); text-decoration: none; margin-bottom: 12px; display: block; transition: 0.3s; }
+        .footer-col a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Sip N' Soul</a>
+        <div class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#feedback">Rate Us</a>
+            <a href="tel:7811054772">Call: 7811054772</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p>Hungry Naki For Food Lovers</p>
+        <h1>Sip N' Soul</h1>
+        <p>Experience the Soul of Coffee</p>
+    </header>
+
+    <section id="menu" class="container">
+        <div class="section-title"><h2>Our Special Menu</h2></div>
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3>Beverages</h3>
+                <div class="menu-item"><span>Tea</span><span class="item-price">₹10</span></div>
+                <div class="menu-item"><span>Hot Coffee</span><span class="item-price">₹20</span></div>
+                <div class="menu-item"><span>Cold Coffee</span><span class="item-price">₹50</span></div>
+                <div class="menu-item"><span>Milk Shake</span><span class="item-price">₹40</span></div>
+                <div class="menu-item"><span>Green Tea</span><span class="item-price">₹20</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Momos</h3>
+                <div class="menu-item"><span>Veg Momos (5 pcs)</span><span class="item-price">₹40</span></div>
+                <div class="menu-item"><span>Chicken Momos (5 pcs)</span><span class="item-price">₹50</span></div>
+                <div class="menu-item"><span>Chicken Momos (Full)</span><span class="item-price">₹80</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Biryani</h3>
+                <div class="menu-item"><span>Aloo Biryani (H/F)</span><span class="item-price">50/70</span></div>
+                <div class="menu-item"><span>Egg Biryani (H/F)</span><span class="item-price">60/80</span></div>
+                <div class="menu-item"><span>Chicken Biryani (H/F)</span><span class="item-price">70/100</span></div>
+                <div class="menu-item"><span>Mutton Biryani (H/F)</span><span class="item-price">100/160</span></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Chicken Specials</h3>
+                <div class="menu-item"><span>Chicken Pakora (250g)</span><span class="item-price">₹80</span></div>
+                <div class="menu-item"><span>Chicken Lollipop (3 pcs)</span><span class="item-price">₹80</span></div>
+                <div class="menu-item"><span>Chicken Kosha (Full)</span><span class="item-price">₹110</span></div>
+                <div class="menu-item"><span>Chilli Chicken (8 pcs)</span><span class="item-price">₹200</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="feedback-section">
+        <div class="section-title"><h2>Rate & Feedback</h2></div>
+        <div class="feedback-card">
+            <form action="https://formspree.io/f/mqakpjpg" method="POST">
+                <div class="stars">
+                    <input type="radio" id="s5" name="Rating" value="5 Stars"><label for="s5">★</label>
+                    <input type="radio" id="s4" name="Rating" value="4 Stars"><label for="s4">★</label>
+                    <input type="radio" id="s3" name="Rating" value="3 Stars"><label for="s3">★</label>
+                    <input type="radio" id="s2" name="Rating" value="2 Stars"><label for="s2">★</label>
+                    <input type="radio" id="s1" name="Rating" value="1 Star"><label for="s1">★</label>
+                </div>
+                <input type="text" name="Customer Name" placeholder="Full Name" class="form-input" required>
+                <input type="email" name="_replyto" placeholder="Your Email" class="form-input" required>
+                <textarea name="Feedback" rows="5" placeholder="Your thoughts on Sip N' Soul..." class="form-input" required></textarea>
+                
+                <input type="hidden" name="_cc" value="rahamanrana582@gmail.com">
+                
+                <button type="submit" class="submit-btn">Send Review</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>📞 +91 7811054772</p>
+                <p>✉️ Sipnsoulofficial@gmail.com</p>
+                <p>📍 Dakshin Betauna, West Bengal</p>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <p>Monday - Sunday</p>
+                <p>07:00 AM - 10:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="https://www.instagram.com/sip_n_soul__" target="_blank">Instagram</a>
+                <a href="https://maps.google.com/?cid=13872122527372186075&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank">View on Maps</a>
+            </div>
+        </div>
+        <div style="text-align: center; color: #555; padding-top: 20px; border-top: 1px solid #222;">
+            &copy; 2026 Sip N' Soul Cafe. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
